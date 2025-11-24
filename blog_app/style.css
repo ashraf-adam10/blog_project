@@ -99,9 +99,6 @@ body{
     border-radius: 7px;
 }
 
-.containerMain{
-    width: 100%;
-}
 .containerText{
     width: 400px;
 }
@@ -114,7 +111,7 @@ body{
     box-shadow: 2px 2px 3px rgb(160, 160, 160);
     cursor: pointer;
 }
-.containerMain .imgBox img:hover{
+.containerText .imgBox img:hover{
     transform: scale(1.005);
 }
 .imgBox img{
@@ -125,7 +122,7 @@ body{
 .imgBox p{
     text-decoration: solid;
 }
-.containerMain .hide{
+.containerText .hide{
     display: none;
 }
 
