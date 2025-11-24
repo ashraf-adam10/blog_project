@@ -19,25 +19,27 @@
                     <li><a href="#">التصنيفات</a></li>
                     <li><a href="#">الملف الشخصي</a></li>
                 </ul>
-                <h1>إسم المدونة</h1>
+                <h1>بوبكورن</h1>
             </nav>
         </header>
 
         <main>
             <div class="post-box">
+                <input type="text" id="textInput" placeholder="العنوان...">
                 <textarea id="postInput" placeholder="منشور جديد..."></textarea>
                 <button id="addPostBtn">نشر</button>
-                <input type="file">
+                <label class="custom-btn" for="file-input">رفع صورة <img src="images/arrow-up-from-bracket-solid-full (1).svg"></label>
+                <input id="file-input" type="file" accept=".png, .jpg">
+                <img id="preview">
             </div>
 
             <div id="postsContainer"></div>
 
 
-
             <div class="containerMain">
                 <div class="containerText">
                     <div class="imgBox">
-                        <img src="/images/What_is_the_Importance_of_Technology.avif" alt="">
+                        <img src="/images/What_is_the_Importance_of_Technology.avif" alt="image">
                         <h2>أساسيات الأمان الرقمي لأي مستخدم </h2>
 
                         <div class="textBox">
@@ -53,13 +55,9 @@
             </div>
         </main>
 
-        <footer></footer>
-
     </div>
 
-
-
-
+    <footer></footer>
 
 
     <script src="main.js"></script>
