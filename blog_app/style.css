@@ -99,30 +99,36 @@ body{
     border-radius: 7px;
 }
 
+    #postsContainer {
+    display: grid;
+    gap: 25px; /* المسافة بين البوستات */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 20px 0;
+}
+    
 .containerText{
-    width: 400px;
+    
 }
 .imgBox{
     margin: 10px auto;
     background-color: #fff;
     padding: 10px;
-    width: 400px;
     border-radius: 7px;
     box-shadow: 2px 2px 3px rgb(160, 160, 160);
     cursor: pointer;
+    max-height: 500px;
+    overflow: hidden;
+    opacity: 1;
+    transition: all 0.4s ease;
 }
 .containerText .imgBox img:hover{
     transform: scale(1.005);
 }
-.imgBox img{
-    width: 400px;
-    border-radius: 7px;
-    transition: 0.3s;
-}
 .imgBox p{
     text-decoration: solid;
 }
-.containerText .hide{
-    display: none;
+.textBox.hide {
+    max-height: 0;
+    opacity: 0;
 }
 

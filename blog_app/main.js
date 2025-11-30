@@ -1,28 +1,51 @@
 let textBox = document.querySelector(".textBox");
 let imgBox = document.querySelector(".imgBox");
-let input = document.getElementById("file-input");
-let preview = document.getElementById("preview");
 let postInput = document.getElementById("postInput");
 let textInput = document.getElementById("textInput");
 let addPostBtn = document.getElementById("addPostBtn");
 let mainTitle = document.getElementById("mainTitle");
-let postImg = document.getElementById("postImg");
 
 
-addPostBtn.addEventListener("click", ()=> {
-    mainTitle.innerHTML = textInput.value;
-    postImg.src = preview.src;
-    textBox.innerHTML = postInput.value;
+addPostBtn.addEventListener("click", () => {
+    let title = textInput.value.trim();
+    let content = postInput.value.trim();
+
+    if (title === "" && content == "") {
+        alert("من فضلك أضف محتوى قبل النشر");
+        return;
+    }
+
+    let newPost = document.createElement("div");
+    newPost.className = "containerText";
+
+    let newImgBox = document.createElement("div");
+    newImgBox.className = "imgBox hide";
+
+
+    let titleElement = document.createElement("h2");
+    titleElement.id = "mainTitle";
+    titleElement.textContent = title;
+
+    let textBoxElement = document.createElement("div");
+    textBoxElement.className = "textBox";
+
+    let paragraph = document.createElement("p");
+    paragraph.textContent = content;
+
+    textBoxElement.appendChild(paragraph);
+    newImgBox.appendChild(titleElement);
+    newImgBox.appendChild(textBoxElement);
+    newPost.appendChild(newImgBox);
+
+    document.getElementById("postsContainer").prepend(newPost);
+
     textInput.value = "";
-    preview.src = "";
     postInput.value = "";
+    preview.src = "";
+    input.value = "";
 });
+
 
 imgBox.addEventListener("click", ()=> {
     textBox.classList.toggle('hide');
-});
-
-input.addEventListener("change", () => {
-    let file = input.files[0];
-    preview.src = URL.createObjectURL(file);
 });
